@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Professional portfolio of Alex Mwangi Kibaya, Full-Stack Developer and Software Engineer">
+        <title>Alex Mwangi Kibaya | Full-Stack Developer Portfolio</title>
+        <link rel="preload" href="style.css" as="style">
+        <link rel="preload" href="alex2.jpg" as="image">
+        <link rel="preload" href="https://kit.fontawesome.com/c5a0e4a937.js" as="script">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/c5a0e4a937.js" crossorigin="anonymous" defer></script>
+    </head>
+
+<body>
+    <button class="menu-toggle">☰</button>
+    <section class="main">
+        <header class="header">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Alex Mwangi Kibaya</h1>
+                <h2>Full-Stack Developer | Software Engineer</h2>
+                <p class="hero-description">Creating elegant solutions to complex problems through clean, efficient code.</p>
+                <div class="hero-buttons">
+                    <a href="CURRICULUM VITAE.pdf" download class="cta-button" aria-label="Download my CV">
+                        <span>Download CV</span>
+                        <i class="fas fa-download" aria-hidden="true"></i>
+                    </a>
+                     <a href="#portfolio" class="cta-button secondary">View Projects</a>
+                </div>
+            </div>
+            <div class="home-image">
+                <img src="alex 2.jpg" alt="Alex Mwangi Kibaya - Professional Software Developer">
+            </div>
+        </section>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h1 class="section-title">About Me</h1>
+            <p class="section-subtitle">Full-stack developer with a passion for creating elegant solutions</p>
+            
+            <div class="about-highlights">
+                <div class="highlight-card">
+                    <i class="fas fa-medal"></i>
+                    <h4>2+ Years</h4>
+                    <p>Professional Experience</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <h4>10+ Projects</h4>
+                    <p>Completed</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <i class="fas fa-users"></i>
+                    <h4>5+ Clients</h4>
+                    <p>Satisfied</p>
+                </div>
+            </div>
+            
+            <div class="about-content">
+                <p class="about-description">I'm a passionate software engineer specializing in full-stack development, with expertise in building responsive web applications and scalable mobile solutions. My approach combines technical precision with creative problem-solving to deliver exceptional user experiences.</p>
+                
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                    <p class="tab-links" onclick="opentab('technologies')">Technologies</p>
+                </div>
+                
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>UI/UX Design</span><br>Crafting intuitive interfaces with user-centered design principles</li>
+                        <li><span>Frontend Development</span><br>Building responsive, accessible web applications with modern frameworks</li>
+                        <li><span>Backend Systems</span><br>Developing robust server-side architectures and APIs</li>
+                        <li><span>Mobile Development</span><br>Creating cross-platform mobile applications with native performance</li>
+                    </ul>
+                </div>
+                
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>Developer Intern - Kenya Ports Authority (2025 - present)</span>Assisted in developing RESTful APIs and database structures for web applications. Worked with PHP and MySQL to optimize server-side functionality and data management.</li>
+                        <li><span>Freelance Web Developer (2023 - Present)</span><br>Developed responsive and accessible websites for clients, focusing on user experience, performance, and SEO optimization. Utilized HTML, CSS, JavaScript, and PHP to build functional and visually appealing web applications.</li>
+                        <li><span>UI/UX Designer (2022 - Present)</span><br>Designed intuitive user interfaces, conducting user research and prototyping wireframes to enhance usability. Created design systems that improve brand consistency and user engagement.</li>
+                    </ul>
+                </div>
+                
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2022-Present</span><br>BSc. Information Technology - Technical University of Mombasa</li>
+                        <li><span>2018-2021</span><br>Kianyaga High School - KCSE Certificate<br>Mean grade: B(plain)</li>
+                        <li><span>2008-2017</span><br>St. Stephens Kairi catholic School - KCPE Certificate<br>Marks scored: 373</li>
+                    </ul>
+                </div>
+                
+                <div class="tab-contents" id="technologies">
+                    <ul>
+                        <li><span>Frontend</span><br>HTML5, CSS3, JavaScript (ES6+), React, Vue.js</li>
+                        <li><span>Backend</span><br>Node.js, Python (Django, Flask), PHP (Laravel)</li>
+                        <li><span>Mobile</span><br>React Native, Flutter, Android (Kotlin)</li>
+                        <li><span>Databases</span><br>MySQL, PostgreSQL, MongoDB, Firebase</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h1 class="section-title">My Services</h1>
+            <p class="section-subtitle">Professional solutions tailored to your digital needs</p>
+            
+            <div class="service-list">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h2>Web Development</h2>
+                    <p>Custom, responsive websites built with modern technologies like React, HTML, CSS and Node.js. I create fast, secure, and scalable web applications that drive results.</p>
+                    <ul class="service-features">
+                        <li>Custom Website Development</li>
+                        <li>Backend & API development</li>
+                        <li>Performance & SEO optimization</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h2>Automation & Workflow Optimization</h2>
+                    <p>Streamlining business operations by automating tasks and integrating web solutions that save time and improve efficiency.</p>
+                    <ul class="service-features">
+                        <li>Custom Admin Dashboards</li>
+                        <li>Task Automation Scripts</li>
+                        <li>Seamless System Integrations</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h2>UI/UX Design</h2>
+                    <p>User-centered designs that combine aesthetics with functionality. From wireframes to prototypes, I craft interfaces that users love to interact with.</p>
+                    <ul class="service-features">
+                        <li>Wireframing & Prototyping</li>
+                        <li>User Research</li>
+                        <li>Interaction Design</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h1 class="section-title">My Projects</h1>
+            <p class="section-subtitle">Explore my recent work and creative solutions</p>
+            
+            <div class="project-grid">
+                <div class="project-card-secondary">
+                    <img src="salon website.png" alt="hair and beauty salon website">
+                    <div class="project-overlay">
+                        <div class="project-info">
+                            <h3>Hair Salon Website</h3>
+                            <p>Showcasing a modern, responsive website for a hair and beauty salon</p>
+                            <div class="project-links">
+                                <a href="https://blessedraynahairsalon.netlify.app/" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/kibayakhalifa/blessedraynasalon" class="project-link">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="minimalist desktop .png" alt="Portfolio website">
+                    <div class="project-overlay">
+                        <div class="project-info">
+                            <h3>Portfolio website</h3>
+                            <p>Showcasing a portfolio website design with a focus on simplicity and elegance</p>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="finance dashboard screenshot.png" alt="E-commerce Platform">
+                    <div class="project-overlay">
+                        <div class="project-info">
+                            <h3>Finance dashboard</h3>
+                            <p>A comprehensive budget tracker featuring interactive visualizations and actionable insights to help users manage their finances effectively.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/kibayakhalifa/personal-finance-dashboard" class="project-link">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-more">
+                <a href="portfolio.html" class="cta-button">
+                    View Full Portfolio
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h1 class="section-title">Get In Touch</h1>
+            <p class="section-subtitle">Let's talk about your project, or just say hi.</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <a href="mailto:alexkibayamwangi@gmail.com">alexkibayamwangi@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h3>Phone</h3>
+                                <a href="tel:+254701206117">+254 701 206 117</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Location</h3>
+                                <p>Mombasa, Kenya</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/slim.shady.163/" target="_blank" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://x.com/sketchykhalifa" target="_blank" class="social-icon">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/shribity.dup" target="_blank" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/alex-kibaya-500693332" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/kibayakhalifa" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    
+                    <a href="CURRICULUM VITAE.pdf" download class="cta-button outline">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+                
+                <form class="contact-form" action="https://formspree.io/f/mkgjqnqp" method="POST" id="contactForm">
+                    <input type="hidden" name="_subject" value="New message from portfolio">
+                    <input type="text" name="_gotcha" style="display:none">
+                    
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder=" " required>
+                        <label>Your Name*</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder=" " required>
+                        <label>Your Email*</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea name="message" rows="5" placeholder=" " required></textarea>
+                        <label>Your Message*</label>
+                    </div>
+                    
+                    <button type="submit" class="cta-button" id="submitBtn">
+                        Send Message
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    
+                    <div id="formFeedback"></div>
+                </form>
+            </div>
+        </div>
+        
+        <footer class="copyright">
+            <p>© <span id="year"></span> Alex Kibaya. All rights reserved. Crafted with <i class="fas fa-heart"></i> in Kenya</p>
+        </footer>
+    </section>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navbar = document.querySelector('.navbar');
+        
+        menuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navbar.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navbar.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            });
+        });
+        
+        // Tab functionality
+        const tabLinks = document.getElementsByClassName('tab-links');
+        const tabContents = document.getElementsByClassName('tab-contents');
+        
+        function opentab(tabname) {
+            Array.from(tabLinks).forEach(tab => {
+                tab.classList.remove('active-link');
+            });
+            
+            Array.from(tabContents).forEach(content => {
+                content.classList.remove('active-tab');
+            });
+            
+            event.currentTarget.classList.add('active-link');
+            document.getElementById(tabname).classList.add('active-tab');
+        }
+        
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = this;
+            const submitBtn = document.getElementById('submitBtn');
+            const feedback = document.getElementById('formFeedback');
+            
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Sending <i class="fas fa-spinner fa-spin"></i>';
+            feedback.textContent = '';
+            feedback.style.display = 'none';
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    feedback.style.display = 'block';
+                    feedback.innerHTML = '✅ Message sent successfully!';
+                    feedback.style.color = '#10b981';
+                    form.reset();
+                } else {
+                    throw new Error('Failed to send message');
+                }
+            })
+            .catch(error => {
+                feedback.style.display = 'block';
+                feedback.innerHTML = '❌ Error sending message. Please email me directly at alexkibayamwangi@gmail.com';
+                feedback.style.color = '#ef4444';
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+            });
+        });
+        
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Portfolio | Alex Mwangi Kibaya</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .coming-soon {
+            text-align: center;
+            padding: 100px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .coming-soon h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .coming-soon p {
+            font-size: 1.2rem;
+            color: var(--text-medium);
+            margin-bottom: 30px;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .back-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="coming-soon">
+            <h2>More Projects Coming Soon</h2>
+            <p>I'm currently working on new projects that will be added to my portfolio shortly. Check back later to see my latest work!</p>
+            <a href="index.html" class="back-button">Back to Portfolio</a>
+        </section>
+    </main>
+
+    <footer class="copyright">
+        <p>© <span id="year"></span> Alex Kibaya. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
