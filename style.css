@@ -24,36 +24,12 @@ body {
     overflow-x: hidden;
 }
 
-/* Mobile Menu Toggle */
-.menu-toggle {
-    display: none;
-    position: fixed;
-    top: 1.5rem;
-    right: 1.5rem;
-    z-index: 1000;
-    background: var(--primary);
-    color: white;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    transition: var(--transition);
-}
-
-.menu-toggle.active {
-    transform: rotate(90deg);
-}
-
-/* Main Header Section */
+/* Main Section */
 .main {
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-    min-height: 100vh;
     position: relative;
     overflow: hidden;
-    padding-top: 80px;
+    padding: 3rem 0;
 }
 
 .main::before {
@@ -68,6 +44,7 @@ body {
     z-index: 0;
 }
 
+/* Header */
 .header {
     width: 100%;
     max-width: 1400px;
@@ -76,9 +53,11 @@ body {
     position: relative;
     z-index: 1;
     display: flex;
-    justify-content: flex-end; /* This moves navbar to right */
+    justify-content: flex-end;
+   
 }
 
+/* Navbar */
 .navbar ul {
     list-style: none;
     display: flex;
@@ -86,16 +65,18 @@ body {
     margin: 0;
     padding: 0;
 }
-.navbar ul li a{
+
+.navbar ul li a {
     text-decoration: none;
     color: var(--text-light);
     font-size: 1.1rem;
     font-weight: 500;
-    transition: all 0.3s ease;
     padding: 0.5rem 0;
     position: relative;
+    transition: var(--transition);
 }
-.navbar ul li a::after{
+
+.navbar ul li a::after {
     content: '';
     width: 0;
     height: 2px;
@@ -105,15 +86,71 @@ body {
     bottom: 0;
     transition: width 0.3s ease;
 }
-.navbar ul li a:hover{
+
+.navbar ul li a:hover,
+.navbar ul li a:focus {
     color: var(--accent);
 }
-.navbar ul li a:hover::after{
+
+.navbar ul li a:hover::after,
+.navbar ul li a:focus::after {
     width: 100%;
 }
 
-/* Hero Section */
-/* Hero Section */
+/* Back to Top Button */
+.back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    background: var(--primary);
+    color: var(--text-light);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: var(--transition);
+    align-items: center;
+    justify-content: center;
+}
+
+.back-to-top:hover {
+    background: var(--secondary);
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .navbar {
+        display: none;
+    }
+
+    .header {
+        padding: 1rem; 
+    }
+
+    .main {
+        padding: 2rem 0;
+    }
+}
+
+/* Desktop Adjustments */
+@media (min-width: 768px) {
+    .navbar {
+        display: block;
+    }
+
+    .back-to-top {
+        display: none; 
+    }
+}
+
+/* Rest of your existing CSS (hero, about, services, etc.) remains unchanged */
+
 .hero {
     display: flex;
     flex-direction: column;
@@ -125,7 +162,7 @@ body {
     position: relative;
     z-index: 1;
     text-align: center;
-    min-height: calc(100vh - 80px); /* Full viewport height minus header */
+    min-height: auto;
 }
 
 /* Mobile adjustment */
@@ -434,7 +471,6 @@ body {
     margin-bottom: 0.3rem;
     font-size: 1.1rem;
 }
-
 /* Services Section */
 .service-list {
     display: grid;
