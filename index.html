@@ -62,28 +62,19 @@
           "telephone": "+254701206117"
         }
         </script>
-    </head>
-
-<body>
-     <!-- Skip to Content Link for Accessibility -->
-     <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-     <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
-     
-     <main id="main-content">
-         <section class="main">
-             <header class="header" role="banner">
-                 <nav class="navbar" aria-label="Main navigation">
-                     <ul>
-                         <li><a href="#" aria-current="page">Home</a></li>
-                         <li><a href="#about">About</a></li>
-                         <li><a href="#services">Services</a></li>
-                         <li><a href="#portfolio">Portfolio</a></li>
-                         <li><a href="#contact">Contact</a></li>
-                     </ul>
-                 </nav>
-             </header>
- 
+    </head> <main id="main-content">
+        <section class="main">
+            <header class="header" role="banner">
+                <nav class="navbar" id="navbar" aria-label="Main navigation">
+                    <ul>
+                        <li><a href="#" aria-current="page">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
              <section class="hero" itemscope itemtype="https://schema.org/Person">
                  <div class="hero-text">
                      <h1 itemprop="name">Alex Mwangi Kibaya</h1>
@@ -165,10 +156,10 @@
                 
                 <div class="tab-contents" id="technologies">
                     <ul>
-                        <li><span>Frontend</span><br>HTML5, CSS3, JavaScript (ES6+), React, Vue.js</li>
+                        <li><span>Frontend</span><br>HTML5, CSS3, JavaScript, React, Vue.js</li>
                         <li><span>Backend</span><br>Node.js, Python (Django, Flask), PHP (Laravel)</li>
                         <li><span>Mobile</span><br>React Native, Flutter, Android (Kotlin)</li>
-                        <li><span>Databases</span><br>MySQL, PostgreSQL, MongoDB, Firebase</li>
+                        <li><span>Databases</span><br>MySQL, PostgreSQL, MongoDB</li>
                     </ul>
                 </div>
             </div>
@@ -376,133 +367,117 @@
         </div>
         
         <footer class="copyright">
-            <p>© <span id="year"></span> Alex Kibaya. All rights reserved. Crafted with <i class="fas fa-heart"></i> in Kenya</p>
+            <p>© <span id="year"></span> Alex Kibaya. All rights reserved.</p>
         </footer>
     </section>
 
+    <button class="back-to-top" aria-label="Scroll back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+
     <script>
-       document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', () => {
+            // Remove menu toggle logic since it's no longer needed
+            // Back to Top functionality
+            const backToTopBtn = document.querySelector('.back-to-top');
 
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navbar = document.querySelector('.navbar');
-  const body = document.body;
-  const navLinks = document.querySelectorAll('.navbar a');
+            // Show/hide button based on scroll position
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.style.display = 'flex';
+                } else {
+                    backToTopBtn.style.display = 'none';
+                }
+            });
 
-  // Calculate proper menu height based on content
-  function setMenuHeight() {
-    const menuItems = document.querySelectorAll('.navbar ul li');
-    const itemHeight = 60; // px per menu item
-    const padding = 40; // top+bottom padding
-    const calculatedHeight = (menuItems.length * itemHeight) + padding;
-    const maxHeight = window.innerHeight * 0.6; // Max 60% of viewport
-    
-    navbar.style.height = `${Math.min(calculatedHeight, maxHeight)}px`;
-    navbar.style.overflowY = calculatedHeight > maxHeight ? 'auto' : 'hidden';
-  }
+            // Smooth scroll to top
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
 
-  // Initialize menu
-  setMenuHeight();
-  window.addEventListener('resize', setMenuHeight);
+            // Your existing tab system, contact form, smooth scroll, and copyright year code
+            // (Remove the menu-related JavaScript)
+            const tabLinks = document.querySelectorAll('.tab-links');
+            const tabContents = document.querySelectorAll('.tab-contents');
 
-  // Toggle menu function
-  function toggleMenu() {
-    menuToggle.classList.toggle('active');
-    navbar.classList.toggle('active');
-    body.classList.toggle('no-scroll');
-    setMenuHeight();
-  }
+            const activateTab = (tabId) => {
+                tabLinks.forEach(link => link.classList.remove('active-link'));
+                tabContents.forEach(content => content.classList.remove('active-tab'));
 
-  // Menu event listeners
-  menuToggle.addEventListener('click', toggleMenu);
+                const selectedTab = document.querySelector(`[onclick*="${tabId}"]`);
+                const selectedContent = document.getElementById(tabId);
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      // Handle anchor links
-      if (this.hash) {
-        e.preventDefault();
-        const target = document.querySelector(this.hash);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-      
-      // Close menu
-      menuToggle.classList.remove('active');
-      navbar.classList.remove('active');
-      body.classList.remove('no-scroll');
-    });
-  });
+                if (selectedTab && selectedContent) {
+                    selectedTab.classList.add('active-link');
+                    selectedContent.classList.add('active-tab');
+                }
+            };
 
-  // Close when clicking outside
-  document.addEventListener('click', function(e) {
-    if (!navbar.contains(e.target) && e.target !== menuToggle) {
-      menuToggle.classList.remove('active');
-      navbar.classList.remove('active');
-      body.classList.remove('no-scroll');
-    }
-  });
-           
-  const tabLinks = document.querySelectorAll('.tab-links');
-  const tabContents = document.querySelectorAll('.tab-contents');
+            tabLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const tabId = link.getAttribute('onclick').match(/'([^']+)'/)[1];
+                    activateTab(tabId);
+                });
+            });
 
-  function openTab(e, tabName) {
-    // Hide all tab contents
-    tabContents.forEach(content => {
-      content.classList.remove('active-tab');
-    });
+            if (tabLinks.length > 0 && !document.querySelector('.tab-links.active-link')) {
+                activateTab(tabLinks[0].getAttribute('onclick').match(/'([^']+)'/)[1]);
+            }
 
-    // Deactivate all tab links
-    tabLinks.forEach(tab => {
-      tab.classList.remove('active-link');
-    });
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const formFeedback = document.getElementById('formFeedback');
 
-    // Activate current tab
-    document.getElementById(tabName).classList.add('active-tab');
-    e.currentTarget.classList.add('active-link');
-  }
+            if (contactForm) {
+                contactForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const formData = new FormData(contactForm);
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+                    formFeedback.textContent = '';
+                    formFeedback.style.display = 'none';
 
-  // Add click event to tabs
-  tabLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      openTab(e, this.dataset.tab || this.getAttribute('href').slice(1));
-    });
-  });
+                    try {
+                        const response = await fetch(contactForm.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: { 'Accept': 'application/json' }
+                        });
 
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const submitBtn = this.querySelector('button[type="submit"]');
-      const feedbackEl = document.getElementById('formFeedback');
+                        if (!response.ok) throw new Error('Server error');
+                        formFeedback.textContent = 'Message sent successfully!';
+                        formFeedback.style.color = '#10b981';
+                        contactForm.reset();
+                    } catch (error) {
+                        formFeedback.textContent = 'Failed to send message. Please try again later.';
+                        formFeedback.style.color = '#ef4444';
+                    } finally {
+                        formFeedback.style.display = 'block';
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+                        setTimeout(() => {
+                            formFeedback.style.display = 'none';
+                        }, 5000);
+                    }
+                });
+            }
 
-      // Visual feedback
-      submitBtn.disabled = true;
-      const originalBtnText = submitBtn.innerHTML;
-      submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
-      feedbackEl.textContent = '';
-      feedbackEl.style.display = 'none';
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const target = document.querySelector(anchor.getAttribute('href'));
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
 
-      // Simulate form submission (replace with actual fetch)
-      setTimeout(() => {
-        // Success simulation
-        feedbackEl.style.display = 'block';
-        feedbackEl.textContent = 'Message sent successfully!';
-        feedbackEl.style.color = '#10b981';
-        this.reset();
-        
-        // Restore button
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnText;
-      }, 1500);
-    });
-  }
-
-  const yearEl = document.getElementById('year');
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
-});
+            const yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+        });
     </script>
 </body>
-</html>
+</html> 
